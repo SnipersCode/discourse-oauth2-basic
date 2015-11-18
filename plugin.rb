@@ -21,6 +21,7 @@ class OAuth2BasicAuthenticator < ::Auth::OAuth2Authenticator
                           token_url: SiteSetting.oauth2_token_url
                         }
                         opts[:token_params] = {headers: {'Authorization' => basic_auth_header }}
+                        opts[:scope] = "users"
                       }
   end
 
